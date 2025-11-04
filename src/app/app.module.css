@@ -1,0 +1,29 @@
+.wrapper {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+.title {
+    font-size: 3.2em;
+    line-height: 1.1;
+    text-align: center;
+}
+
+.explanation {
+    margin-top: 40px;
+    padding: 20px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+    background: var(--color-explanation-bg);
+}
+
+.explanationTitle {
+    margin-top: 0;
+}
+
+.list {
+    text-align: left;
+    line-height: 1.8;
+}
