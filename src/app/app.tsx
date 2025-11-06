@@ -1,5 +1,8 @@
 import { ThemeProvider, ThemeToggle } from '../modules/theme'
 import styles from './app.module.css'
+import {
+    CounterWithHook
+} from '../modules/counter/ui/counter-with-hook/counter-with-hook.tsx'
 
 function MainPage() {
     return (
@@ -9,6 +12,8 @@ function MainPage() {
             </h1>
 
             <ThemeToggle />
+            <CounterWithHook />
+            <CounterWithHook />
 
             <div className={styles.explanation}>
                 <h3 className={styles.explanationTitle}>Примеры:</h3>
@@ -32,7 +37,9 @@ function MainPage() {
 function App() {
     return (
         <ThemeProvider>
-            <MainPage />
+            <ThemeProvider>
+                <MainPage />
+            </ThemeProvider>
         </ThemeProvider>
     )
 }

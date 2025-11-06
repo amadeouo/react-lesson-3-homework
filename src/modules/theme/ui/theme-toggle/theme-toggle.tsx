@@ -1,13 +1,14 @@
 import { useTheme } from '../../hooks/use-theme'
 import styles from './theme-toggle.module.css'
+import Button from '../../../../components/Button/Button.tsx'
 
 export const ThemeToggle = () => {
     const { theme, toggleTheme } = useTheme()
 
     return (
-        <button className={styles.toggle} onClick={toggleTheme}>
+        <Button className={styles.toggle} onClick={toggleTheme}>
             {theme === 'light' ? '🌙' : '☀️'} Переключить тему
-        </button>
+        </Button>
     )
 }
 

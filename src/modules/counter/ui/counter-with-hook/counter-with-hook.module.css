@@ -1,0 +1,16 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  width: 200px;
+}
+
+.count {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-inline: 10px;
+}
+
+.reset {
+  margin-left: 10px;
+}
