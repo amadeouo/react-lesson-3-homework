@@ -12,6 +12,7 @@
   --color-bg: #242424;
   --color-text: rgba(255, 255, 255, 0.87);
   --color-button-bg: #1a1a1a;
+  --color-button-border: white;
   --color-button-text: white;
   --color-link: #646cff;
   --color-link-hover: #535bf2;
@@ -25,6 +26,7 @@
   --color-bg: #ffffff;
   --color-text: #213547;
   --color-button-bg: #f9f9f9;
+  --color-button-border: #747bff;
   --color-button-text: #213547;
   --color-link: #646cff;
   --color-link-hover: #747bff;
@@ -38,6 +40,7 @@
   --color-bg: #242424;
   --color-text: rgba(255, 255, 255, 0.87);
   --color-button-bg: #1a1a1a;
+  --color-button-border: white;
   --color-button-text: white;
   --color-link: #646cff;
   --color-link-hover: #535bf2;

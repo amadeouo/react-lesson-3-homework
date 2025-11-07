@@ -7,12 +7,23 @@ export const CounterWithContext = () => {
 
     return (
         <div className={classes.wrapper}>
-            <Button onClick={decrementContext}>-</Button>
+            <Button
+                onClick={decrementContext}
+                contextButton
+            >
+                -
+            </Button>
             <span className={classes.count}>{counter}</span>
-            <Button onClick={incrementContext}>+</Button>
+            <Button
+                onClick={incrementContext}
+                contextButton
+            >
+                +
+            </Button>
             <Button
                 className={classes.reset}
                 onClick={resetContext}
+                contextButton
             >
                 reset
             </Button>

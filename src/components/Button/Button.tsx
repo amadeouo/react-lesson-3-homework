@@ -5,6 +5,7 @@ export type ButtonProps = {
     children?: React.ReactNode;
     onClick?: () => void;
     className?: string;
+    contextButton?: boolean
 }
 
 export const Button = (props: ButtonProps) => {
@@ -12,11 +13,16 @@ export const Button = (props: ButtonProps) => {
         children,
         onClick,
         className,
+        contextButton,
     } = props
 
     return (
         <button
-            className={classNames(className, classes.button)}
+            className={classNames(
+                className,
+                classes.button,
+                contextButton ? classes.contextButton : undefined
+            )}
             onClick={onClick}
             type="button"
         >
