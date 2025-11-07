@@ -1,5 +1,6 @@
-import { type ReactNode, useState } from 'react'
+import { type ReactNode } from 'react'
 import { CounterContext } from './counter-context.tsx'
+import { useLocalStorage } from '../../../shared/hooks/use-local-storage.ts'
 
 export type CounterProviderProps = {
     children: ReactNode
@@ -10,22 +11,22 @@ export const CounterProvider = (props: CounterProviderProps) => {
         children,
     } = props
     
-    const [counter, setCounter] = useState<number>(0)
+    const [counter, setCounter] = useLocalStorage<number>('counter-context', 0)
 
-    const increment = () => {
-        setCounter(prev => prev++)
+    const incrementContext = () => {
+        setCounter(prev => prev + 1)
     }
 
-    const decrement = () => {
-        setCounter(prev => prev--)
+    const decrementContext = () => {
+        setCounter(prev => prev - 1)
     }
 
-    const reset = () => {
+    const resetContext = () => {
         setCounter(0)
     }
 
     return (
-        <CounterContext.Provider value={{ counter, increment, decrement, reset }}>
+        <CounterContext.Provider value={{ counter, incrementContext, decrementContext, resetContext }}>
             {children}
         </CounterContext.Provider>
     )

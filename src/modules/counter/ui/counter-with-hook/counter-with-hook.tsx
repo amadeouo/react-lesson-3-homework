@@ -1,9 +1,17 @@
-import useCounter from '../../hooks/use-counter.ts'
 import classes from './counter-with-hook.module.css'
-import Button from '../../../../components/Button/Button.tsx' // это можно пофиксить алиасами я знаю, чуть позже разберусь с этим
+import { Button } from '../../../../components/Button'
+import { useCounter } from '../../hooks/use-counter.ts'
 
-export const CounterWithHook = () => {
-    const {count, increment, decrement, reset} = useCounter(0)
+type CounterWithHookProps = {
+    idCounter: string | number
+}
+
+export const CounterWithHook = (props: CounterWithHookProps) => {
+    const {
+        idCounter
+    } = props
+
+    const {count, increment, decrement, reset} = useCounter(0, idCounter)
 
     return (
         <div className={classes.wrapper}>

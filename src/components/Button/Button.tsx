@@ -7,7 +7,7 @@ export type ButtonProps = {
     className?: string;
 }
 
-const Button = (props: ButtonProps) => {
+export const Button = (props: ButtonProps) => {
     const {
         children,
         onClick,
@@ -24,5 +24,3 @@ const Button = (props: ButtonProps) => {
         </button>
     )
 }
-
-export default Button

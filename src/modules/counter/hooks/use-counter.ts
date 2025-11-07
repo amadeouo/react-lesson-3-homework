@@ -1,7 +1,7 @@
-import { useState } from 'react'
+import { useLocalStorage } from '../../../shared/hooks/use-local-storage.ts'
 
-const useCounter = (initialValue: number = 0) => {
-    const [count, setCount] = useState<number>(initialValue)
+export const useCounter = (initialValue: number = 0, id: string | number) => {
+    const [count, setCount] = useLocalStorage<number>(`counter-hook-${id}}`, initialValue)
 
     return {
         count: count,
@@ -10,5 +10,3 @@ const useCounter = (initialValue: number = 0) => {
         reset: () => setCount(initialValue),
     }
 }
-
-export default useCounter

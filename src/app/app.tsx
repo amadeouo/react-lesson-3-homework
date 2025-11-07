@@ -1,8 +1,11 @@
 import { ThemeProvider, ThemeToggle } from '../modules/theme'
 import styles from './app.module.css'
 import {
-    CounterWithHook
-} from '../modules/counter/ui/counter-with-hook/counter-with-hook.tsx'
+    CounterProvider,
+    CounterWithContext,
+    CounterWithHook,
+} from '../modules/counter'
+
 
 function MainPage() {
     return (
@@ -12,8 +15,10 @@ function MainPage() {
             </h1>
 
             <ThemeToggle />
-            <CounterWithHook />
-            <CounterWithHook />
+            <CounterWithHook idCounter="first" />
+            <CounterWithHook idCounter="second" />
+            <CounterWithContext />
+            <CounterWithContext />
 
             <div className={styles.explanation}>
                 <h3 className={styles.explanationTitle}>Примеры:</h3>
@@ -36,11 +41,11 @@ function MainPage() {
 
 function App() {
     return (
+      <CounterProvider>
         <ThemeProvider>
-            <ThemeProvider>
                 <MainPage />
-            </ThemeProvider>
         </ThemeProvider>
+      </CounterProvider>
     )
 }
 

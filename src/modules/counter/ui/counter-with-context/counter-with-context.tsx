@@ -1,18 +1,18 @@
 import classes from './counter-with-context.module.css'
-import Button from '../../../../components/Button/Button.tsx'
-import { useCounterContext } from '../../hooks/use-counter-context.ts' // это можно пофиксить элиасами я знаю, чуть позже разберусь с этим
+import { Button } from '../../../../components/Button'
+import { useCounterContext } from '../../hooks/use-counter-context'
 
 export const CounterWithContext = () => {
-    const [counter, increment, decrement, reset] = useCounterContext()
+    const { counter, incrementContext, decrementContext, resetContext } = useCounterContext()
 
     return (
         <div className={classes.wrapper}>
-            <Button onClick={decrement}>-</Button>
+            <Button onClick={decrementContext}>-</Button>
             <span className={classes.count}>{counter}</span>
-            <Button onClick={increment}>+</Button>
+            <Button onClick={incrementContext}>+</Button>
             <Button
                 className={classes.reset}
-                onClick={reset}
+                onClick={resetContext}
             >
                 reset
             </Button>
